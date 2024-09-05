@@ -1,4 +1,4 @@
-Skycast API Documentation 🌩️🌨️🌧️
+Skycast API Documentation 🌩️🌧️⛅
 ===================================
 
 This API is a free api based on the weather data provided by [OpenWeatherMap](https://openweathermap.org/) and ip details from [Marvelly API](https://api.marvelly.com.ng/ip/)
@@ -16,11 +16,7 @@ This API is a free api based on the weather data provided by [OpenWeatherMap](ht
 
 **Method:** GET
 
-**URL:** `http://localhost:3000/weather?lon={lon}&lat={lat}`
-
-Copy
-
-    
+**URL:**  
     http://localhost:3000/weather?lon={lon}&lat={lat}
                     
 
@@ -59,10 +55,7 @@ Copy
 
 **Method:** GET
 
-**URL:** `http://localhost:3000/ipweather/{ip}`
-
-Copy
-
+**URL:**
     
     http://localhost:3000/ipweather/{ip}
                     
@@ -115,10 +108,7 @@ Copy
 
 **Method:** GET
 
-**URL:** `http://localhost:3000/this-weather`
-
-Copy
-
+**URL:**
     
     http://localhost:3000/this-weather
                     
@@ -168,17 +158,15 @@ Copy
     }
                 
 
-/weather/:country\_code/:state(Under Development⚠️☠️)
+/weather/:country\_code/:state
+###(Under Development⚠️☠️)
 -----------------------------------------------------
 
 **Description:** Fetches weather information based on the state name and country code.(there's a bug somewhere and I'll find it🌚🫠)
 
 **Method:** GET
 
-**URL:** `http://localhost:3000/weather/{country_code}/{state}`
-
-Copy
-
+**URL:** 
     
     http://localhost:3000/weather/{country_code}/{state}
                     
