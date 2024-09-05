@@ -17,7 +17,7 @@ This API is a free api based on the weather data provided by [OpenWeatherMap](ht
 **Method:** GET
 
 **URL:**  
-```
+
     http://localhost:3000/weather?lon={lon}&lat={lat}
                     
 
