@@ -17,6 +17,7 @@ This API is a free api based on the weather data provided by [OpenWeatherMap](ht
 **Method:** GET
 
 **URL:**  
+```
     http://localhost:3000/weather?lon={lon}&lat={lat}
                     
 
@@ -159,8 +160,8 @@ This API is a free api based on the weather data provided by [OpenWeatherMap](ht
                 
 
 /weather/:country\_code/:state
-###(Under Development⚠️☠️)
 -----------------------------------------------------
+###(Under Development⚠️☠️)
 
 **Description:** Fetches weather information based on the state name and country code.(there's a bug somewhere and I'll find it🌚🫠)
 
