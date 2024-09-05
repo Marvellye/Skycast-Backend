@@ -7,7 +7,6 @@ const apiKey = Keys[Math.floor(Math.random() * Keys.length)];
 
 const OPENWEATHERMAP_API_BASE_URL = 'https://api.openweathermap.org/data/3.0/onecall';
 const IP_API_BASE_URL = 'https://api.marvelly.com.ng/ip';
-const IPIFY_API_URL = 'https://api.ipify.org/?format=json';
 const DATA_FILE_PATH = path.join(__dirname, 'ng.json'); // Path to ng.json
 
 const getWeatherApiUrl = (lat, lon) =>
