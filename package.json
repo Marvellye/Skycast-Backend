@@ -1,0 +1,22 @@
+{
+  "name": "weather_api",
+  "version": "1.0.0",
+  "description": "A simple weather api with diverse functions ",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodedev"
+  },
+  "keywords": [
+    "weather",
+    "weatherapi",
+    "ipapi",
+    "getipweather"
+  ],
+  "author": "Marvellous Ezekiel",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
