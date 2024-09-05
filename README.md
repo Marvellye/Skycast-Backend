@@ -1,5 +1,3 @@
-  API Documentation   body { background-color: #f8f9fa; } .container { margin-top: 30px; } .header { background-color: #007bff; /\* Blue background \*/ color: white; padding: 20px; text-align: center; border-radius: 5px; } .api-section { margin-bottom: 40px; } .api-title { font-size: 1.5rem; margin-bottom: 15px; } .code-container { position: relative; } .copy-btn { position: absolute; top: 10px; right: 10px; background: #0056b3; /\* Darker blue \*/ border: none; color: white; padding: 5px 10px; border-radius: 5px; cursor: pointer; } .copy-btn:hover { background: #004494; /\* Even darker blue \*/ } pre { background: #fff; border: 1px solid #ddd; border-radius: 5px; padding: 15px; overflow-x: auto; } h4 { margin-top: 20px; } footer { background-color: #007bff; /\* Blue background \*/ color: white; text-align: center; padding: 10px; margin-top: 40px; border-radius: 5px; }
-
 Skycast API Documentation 🌩️🌨️🌧️
 ===================================
 
@@ -214,5 +212,3 @@ Copy
                 
 
 © Skycast 2024 - Vector × Marvelly
-
-function copyToClipboard(text) { navigator.clipboard.writeText(text).then(() => { Swal.fire({ title: 'Copied!', text: 'The endpoint has been copied to your clipboard.', icon: 'success', confirmButtonText: 'OK' }); }, (err) => { Swal.fire({ title: 'Error!', text: 'Failed to copy URL.', icon: 'error', confirmButtonText: 'OK' }); }); }
