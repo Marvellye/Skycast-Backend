@@ -19,7 +19,7 @@ const swaggerOptions = {
     },
     servers: [
       {
-        url: 'https://skycast-backend-live.onrender.com/',
+        url: 'https://skycast-backend-v1-1.onrender.com/',
       },
     ],
   },
