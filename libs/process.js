@@ -3,7 +3,8 @@ const path = require('path');
 const axios = require('axios');
 
 const Keys = ['5f64c0a8e7ee1d05e1e7a2f6d5337c3f', 'eb2d6dd0cf555cc87f1b59f9d112052e'];
-const apiKey = Keys[Math.floor(Math.random() * Keys.length)];
+//const apiKey = Keys[Math.floor(Math.random() * Keys.length)];
+const apiKey = "12c14f169e38e0b914a6143708abbfb5";
 
 const OPENWEATHERMAP_API_BASE_URL = 'https://api.openweathermap.org/data/3.0/onecall';
 const IP_API_BASE_URL = 'https://api.marvelly.com.ng/ip';
