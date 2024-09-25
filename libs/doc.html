@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API Documentation</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
+           color: #fff;
             
         }
         .container {
@@ -63,12 +62,18 @@
             margin-top: 40px;
             border-radius: 5px;
         }
+        a{
+          text-decoration: none;
+        }
+        .b{
+          color: #fff;
+        }
     </style>
 </head>
-<body>
-    <div class="container">
+<body class="bg-black">
+    <div class=" container">
         <div class="header">
-            <h1>Skycast API Documentation 🌩️🌨️🌧️</h1>
+            <h1>Skycast API Documentation <br/>🌩️🌨️🌧️</h1>
         </div>
 
         <p>
@@ -91,220 +96,21 @@
         
         <!-- Weather by Latitude and Longitude -->
         <div class="api-section">
-            <h2 class="api-title">/weather (query: {lon, lat})</h2>
-            <p><strong>Description:</strong> Fetches weather information based on latitude and longitude.📍</p>
+            <h2 class="api-title">Full Api Documentation and Endpoint <a class="btn btn-primary  " href="/api-docs">Click here </a></h2>
+            <p>📍</p>
             <p><strong>Method:</strong> GET</p>
-            <p><strong>URL:</strong> <code>http://localhost:3000/weather?lon={lon}&lat={lat}</code></p>
-            <div class="code-container">
-                <button class="copy-btn" onclick="copyToClipboard('http://localhost:3000/weather?lon={lon}&lat={lat}')">Copy</button>
-                <pre><code>
-http://localhost:3000/weather?lon={lon}&lat={lat}
-                </code></pre>
-            </div>
-            <h4>Response</h4>
-            <pre><code>
-{
-  "lat": 12.1,
-  "lon": 6.4,
-  "timezone": "Africa/Lagos",
-  "timezone_offset": 3600,
-  "current": {
-    "dt": 1725544162,
-    "sunrise": 1725513843,
-    "sunset": 1725558142,
-    "temp": 29.38,
-    "feels_like": 31.69,
-    "pressure": 1011,
-    "humidity": 60,
-    "dew_point": 20.81,
-    "uvi": 7.37,
-    "clouds": 85,
-    "visibility": 10000,
-    "wind_speed": 3.6,
-    "wind_deg": 294,
-    "wind_gust": 3.4,
-    "weather": [...]
-  }
-}
-            </code></pre>
+            <p><strong>URL:</strong> <code>/api-docs</code></p>
+
+    
         </div>
 
-        <!-- Weather by IP -->
-        <div class="api-section">
-            <h2 class="api-title">/ipweather/:ip</h2>
-            <p><strong>Description:</strong> Fetches weather information based on IP address. 📍🖲️</p>
-            <p><strong>Method:</strong> GET</p>
-            <p><strong>URL:</strong> <code>http://localhost:3000/ipweather/{ip}</code></p>
-            <div class="code-container">
-                <button class="copy-btn" onclick="copyToClipboard('http://localhost:3000/ipweather/{ip}')">Copy</button>
-                <pre><code>
-http://localhost:3000/ipweather/{ip}
-                </code></pre>
-            </div>
-            <h4>Response</h4>
-            <pre><code>
-{
-  "ip": "197.210.84.129",
-  "city": "Calabar",
-  "region": "Cross River State",
-  "country": "NG",
-  "loc": "4.9589,8.3270",
-  "org": "AS29465 MTN NIGERIA Communication limited",
-  "timezone": "Africa/Lagos",
-  "timestamp": 1725544591,
-  "user_browser": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36",
-  "message": "These info are not stored on our server but fetched from a third-party client.",
-  "status": "success- marvelly",
-  "weather": {
-    "lat": 12.1,
-    "lon": 6.4,
-    "timezone": "Africa/Lagos",
-    "timezone_offset": 3600,
-    "current": {
-      "dt": 1725544162,
-      "sunrise": 1725513843,
-      "sunset": 1725558142,
-      "temp": 29.38,
-      "feels_like": 31.69,
-      "pressure": 1011,
-      "humidity": 60,
-      "dew_point": 20.81,
-      "uvi": 7.37,
-      "clouds": 85,
-      "visibility": 10000,
-      "wind_speed": 3.6,
-      "wind_deg": 294,
-      "wind_gust": 3.4,
-      "weather": [...]
-    }
-  }
-}
-            </code></pre>
-        </div>
-
-        <!-- This Weather by Client IP -->
-        <div class="api-section">
-            <h2 class="api-title">/this-weather</h2>
-            <p><strong>Description:</strong> Fetches weather information based on the client's IP address. Basically, your phone 😎✨🥇</p>
-            <p><strong>Method:</strong> GET</p>
-            <p><strong>URL:</strong> <code>http://localhost:3000/this-weather</code></p>
-            <div class="code-container">
-                <button class="copy-btn" onclick="copyToClipboard('http://localhost:3000/this-weather')">Copy</button>
-                <pre><code>
-http://localhost:3000/this-weather
-                </code></pre>
-            </div>
-            <h4>Response</h4>
-            <pre><code>
-{
-  "ip": "197.210.84.129",
-  "
-
-
-
-city": "Calabar",
-  "region": "Cross River State",
-  "country": "NG",
-  "loc": "4.9589,8.3270",
-  "org": "AS29465 MTN NIGERIA Communication limited",
-  "timezone": "Africa/Lagos",
-  "timestamp": 1725544591,
-  "user_browser": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Mobile Safari/537.36",
-  "message": "These info are not stored on our server but fetched from a third-party client.",
-  "status": "success- marvelly",
-  "weather": {
-    "lat": 12.1,
-    "lon": 6.4,
-    "timezone": "Africa/Lagos",
-    "timezone_offset": 3600,
-    "current": {
-      "dt": 1725544162,
-      "sunrise": 1725513843,
-      "sunset": 1725558142,
-      "temp": 29.38,
-      "feels_like": 31.69,
-      "pressure": 1011,
-      "humidity": 60,
-      "dew_point": 20.81,
-      "uvi": 7.37,
-      "clouds": 85,
-      "visibility": 10000,
-      "wind_speed": 3.6,
-      "wind_deg": 294,
-      "wind_gust": 3.4,
-      "weather": [...]
-    }
-  }
-}
-            </code></pre>
-        </div>
-        
-
-        <!-- Weather by State -->
-        <div class="api-section">
-            <h2 class="api-title">/weather/:country_code/:state(Under Development⚠️☠️)</h2>
-            <p><strong>Description:</strong> Fetches weather information based on the state name and country code.(there's a bug somewhere and I'll find it🌚🫠)</p>
-            <p><strong>Method:</strong> GET</p>
-            <p><strong>URL:</strong> <code>http://localhost:3000/weather/{country_code}/{state}</code></p>
-            <div class="code-container">
-                <button class="copy-btn" onclick="copyToClipboard('http://localhost:3000/weather/{country_code}/{state}')">Copy</button>
-                <pre><code>
-http://localhost:3000/weather/{country_code}/{state}
-                </code></pre>
-            </div>
-            <h4>Response</h4>
-            <pre><code>
-{
-  "lat": 12.98333,
-  "lon": 7.60000,
-  "timezone": "Africa/Lagos",
-  "timezone_offset": 3600,
-  "current": {
-    "dt": 1725544162,
-    "sunrise": 1725513843,
-    "sunset": 1725558142,
-    "temp": 29.38,
-    "feels_like": 31.69,
-    "pressure": 1011,
-    "humidity": 60,
-    "dew_point": 20.81,
-    "uvi": 7.37,
-    "clouds": 85,
-    "visibility": 10000,
-    "wind_speed": 3.6,
-    "wind_deg": 294,
-    "wind_gust": 3.4,
-    "weather": [...]
-  }
-}
-            </code></pre>
-        </div>
         
         <footer>
-            © Skycast 2024 - Vector × Marvelly
+            © Skycast 2024 - Vector × <a href="https://marvelly.com.ng" class="b">Marvelly</a>
         </footer>
     </div>
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(() => {
-                Swal.fire({
-                    title: 'Copied!',
-                    text: 'The endpoint has been copied to your clipboard.',
-                    icon: 'success',
-                    confirmButtonText: 'OK'
-                });
-            }, (err) => {
-                Swal.fire({
-                    title: 'Error!',
-                    text: 'Failed to copy URL.',
-                    icon: 'error',
-                    confirmButtonText: 'OK'
-                });
-            });
-        }
-    </script>
 </body>
 </html>
