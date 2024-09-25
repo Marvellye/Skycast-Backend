@@ -15,28 +15,38 @@ const getWeatherApiUrl = (lat, lon) =>
 
 const fetchWeatherByLatLon = async (lat, lon) => {
   try {
+    console.log('Fetching weather for coordinates:', lat, lon);
     const weatherApiUrl = getWeatherApiUrl(lat, lon);
-    console.log('Fetching weather data from URL:', weatherApiUrl);
+    console.log('Weather API URL:', weatherApiUrl);
     const response = await axios.get(weatherApiUrl);
     return response.data;
   } catch (error) {
-    console.error('Error fetching weather data:', error.message);
+    console.error('Error fetching weather data:', error);
     throw new Error('Failed to fetch weather data');
   }
 };
 
 const getStateCoordinates = (countryCode, stateName) => {
   try {
+    if (!fs.existsSync(DATA_FILE_PATH)) {
+      console.error('Data file not found:', DATA_FILE_PATH);
+      throw new Error('State data file is missing');
+    }
+
+    console.log('Reading state data for', countryCode, stateName);
     const data = JSON.parse(fs.readFileSync(DATA_FILE_PATH, 'utf8'));
     const state = data.find(
       (item) => item.country_code === countryCode && item.state_name.toLowerCase() === stateName.toLowerCase()
     );
+
     if (!state) {
       throw new Error(`State ${stateName} not found in ${countryCode}`);
     }
+
+    console.log(`Found state coordinates: lat=${state.lat}, lon=${state.lon}`);
     return { lat: state.lat, lon: state.lon };
   } catch (error) {
-    console.error('Error reading state coordinates:', error.message);
+    console.error('Error reading state coordinates:', error);
     throw new Error('Failed to get state coordinates');
   }
 };
@@ -47,14 +57,16 @@ const fetchWeatherByState = async (countryCode, stateName) => {
     console.log(`Coordinates for ${stateName}: lat=${lat}, lon=${lon}`);
     return await fetchWeatherByLatLon(lat, lon);
   } catch (error) {
-    console.error('Error fetching weather data for state:', error.message);
+    console.error('Error fetching weather data for state:', error);
     throw new Error('Failed to fetch weather data for the state');
   }
 };
 
 const fetchWeatherByIp = async (ip) => {
   try {
+    console.log('Fetching weather for IP:', ip);
     const ipApiUrl = `${IP_API_BASE_URL}/?ip=${ip}`;
+    console.log('IP API URL:', ipApiUrl);
     const ipResponse = await axios.get(ipApiUrl);
     const locationData = ipResponse.data;
 
@@ -63,6 +75,7 @@ const fetchWeatherByIp = async (ip) => {
     }
 
     const [lat, lon] = locationData.loc.split(',');
+    console.log(`Location data: lat=${lat}, lon=${lon}`);
     const weatherData = await fetchWeatherByLatLon(lat, lon);
 
     // Combine IP info and weather data
@@ -71,7 +84,7 @@ const fetchWeatherByIp = async (ip) => {
       weather: weatherData
     };
   } catch (error) {
-    console.error('Error fetching weather or location data:', error.message);
+    console.error('Error fetching weather or location data:', error);
     throw new Error('Failed to fetch weather or location data');
   }
 };
